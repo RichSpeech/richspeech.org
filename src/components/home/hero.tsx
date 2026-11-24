@@ -14,7 +14,7 @@ export function Hero() {
           <Button href="/rsml" arrow>
             Get Started
           </Button>
-          <Button href={SITE.docsUrl} variant="outline" external>
+          <Button href="/rsml" variant="outline">
             View Documentation
           </Button>
         </div>

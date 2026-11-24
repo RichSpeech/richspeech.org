@@ -68,5 +68,5 @@ export const NAV_ITEMS: readonly NavItem[] = [
     ],
   },
   { label: "Editor", href: SITE.editorUrl, external: true, hideExternalIcon: true },
-  { label: "Documentation", href: SITE.docsUrl, external: true },
+  { label: "Documentation", href: "/rsml" },
 ];

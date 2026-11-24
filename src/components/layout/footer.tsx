@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { GithubIcon } from "@/components/ui/icons";
 import { SITE } from "@/lib/constants";
 
 const LINKS = [
-  { label: "Documentation", href: SITE.docsUrl },
+  { label: "Documentation", href: "/rsml", internal: true },
   { label: "editor.richspeech.org", href: SITE.editorUrl },
   { label: "docs.richspeech.org", href: SITE.docsUrl },
 ];
@@ -20,16 +21,22 @@ export function Footer() {
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[15px] text-slate-700">
           {LINKS.map((l) => (
             <li key={l.label}>
-              <a
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-blue-700"
-              >
-                {l.label}
-                <ExternalLink size={14} aria-hidden="true" />
-                <span className="sr-only">(opens in a new tab)</span>
-              </a>
+              {l.internal ? (
+                <Link href={l.href} className="inline-flex items-center gap-1.5 hover:text-blue-700">
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 hover:text-blue-700"
+                >
+                  {l.label}
+                  <ExternalLink size={14} aria-hidden="true" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              )}
             </li>
           ))}
           <li>
