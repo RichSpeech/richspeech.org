@@ -15,6 +15,7 @@ export interface EcosystemItem {
   description: string;
   href: string;
   icon: IconName;
+  comingSoon?: boolean;
 }
 
 export const ECOSYSTEM: readonly EcosystemItem[] = [
@@ -35,12 +36,14 @@ export const ECOSYSTEM: readonly EcosystemItem[] = [
     description: "Python library for preprocessing and preparing speech data.",
     href: "/prespeech-py",
     icon: "package",
+    comingSoon: true,
   },
   {
     title: "RSML (Py)",
     description: "Python library for reading, writing, and manipulating RSML.",
     href: "/rsml-py",
     icon: "layers",
+    comingSoon: true,
   },
 ];
 
