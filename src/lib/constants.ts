@@ -21,26 +21,26 @@ export interface EcosystemItem {
 export const ECOSYSTEM: readonly EcosystemItem[] = [
   {
     title: "RSML",
-    description: "The markup format we use for rich transcripts. It is plain text, so people and programs can both read it.",
+    description: "Rich Speech Markup Language (RSML) is a rich transcription schema and file format for speech.",
     href: "/rsml",
     icon: "file-text",
   },
   {
     title: "RSML npm",
-    description: "A JavaScript and TypeScript library for reading and writing RSML in web apps.",
+    description: "A JavaScript library with a widget for editing RSML in web apps.",
     href: "/rsml-npm",
     icon: "code",
   },
   {
     title: "PreSpeech",
-    description: "A Python library for cleaning up and preparing speech data before it goes into a model.",
+    description: "A Python library for speech preprocessing.",
     href: "/prespeech",
     icon: "package",
     comingSoon: true,
   },
   {
     title: "RSML (Py)",
-    description: "A Python library for reading and writing RSML transcripts and computing evaluation scores.",
+    description: "A Python library for reading and editing RSML transcripts along with evaluation metrics.",
     href: "/rsml-py",
     icon: "layers",
     comingSoon: true,
