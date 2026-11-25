@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# richspeech.org
 
-## Getting Started
+The official website and documentation hub for the [Rich Speech](https://richspeech.org) open-source initiative.
 
-First, run the development server:
+Rich Speech defines modern transcription schemas, representations, and evaluation standards for speech AI — capturing disfluencies, paralinguistics, prosody, code-mixing, and dialects without sacrificing clean normalized text readability.
+
+---
+
+## What's in this repository
+
+This is a Next.js (App Router) + Tailwind CSS web application serving the landing site, specification references, and developer documentation:
+
+- **`/`**: Overview of the Rich Speech initiative, ecosystem components, and online editor link.
+- **`/rsml`**: Specification and annotation guidelines for **Rich Speech Markup Language (RSML)** — covering isolated tokens, span tags, bracket-form dual-readings (`[verbatim](normalized)`), and precedence rules.
+- **`/rsml-npm`**: Developer documentation for the published [`rsml`](https://www.npmjs.com/package/rsml) npm package (`RSMLAnnotator`), including React + TypeScript usage, constructor options, and dynamic vocabulary registration.
+- **`/prespeech-py`** & **`/rsml-py`**: Python speech preprocessing and dataset utilities (currently under active development, marked as Coming Soon).
+
+---
+
+## Local Development
+
+### Prerequisites
+
+- Node.js 18.18+ or 20+
+- npm (or yarn / pnpm / bun)
+
+### Running locally
 
 ```bash
+# Clone the repository
+git clone https://github.com/richspeech/richspeech-org.git
+cd richspeech-org
+
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be running at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Code quality & production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Lint with ESLint
+npm run lint
 
-## Learn More
+# Build static production export
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+richspeech-org/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx         # Root layout with navbar and footer
+│   │   ├── page.tsx           # Home page
+│   │   ├── rsml/page.tsx      # RSML Specification & Annotation Guide
+│   │   ├── rsml-npm/page.tsx  # rsml npm developer guide & React examples
+│   │   ├── prespeech-py/      # PreSpeech (Py) page (Coming Soon)
+│   │   └── rsml-py/           # RSML Python page (Coming Soon)
+│   ├── components/
+│   │   ├── home/              # Hero, ecosystem cards, waveforms
+│   │   ├── layout/            # Sticky navbar and responsive footer
+│   │   └── ui/                # Buttons, icons, logo, and page shells
+│   └── lib/
+│       └── constants.ts       # Site metadata, navigation items, ecosystem configs
+├── public/                    # Static assets
+└── nginx.conf                 # Production server configuration
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Docker Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A multi-stage `Dockerfile` is provided for running behind Nginx:
+
+```bash
+# Build the image
+docker build -t richspeech-org .
+
+# Run container on port 80
+docker run -p 8080:80 richspeech-org
+```
+
+---
+
+## Related Projects
+
+- **[RSML (OpenBhasha/RSML)](https://github.com/OpenBhasha/RSML)**: Core RSML specification, test suites, and npm toolkit.
+- **[Rich Speech Editor](https://editor.richspeech.org)**: Web-based interactive annotator for authoring and verifying RSML transcripts.
+- **[`rsml` on npm](https://www.npmjs.com/package/rsml)**: Client-side annotation UI widget and syntax engine.
+
+---
+
+## License
+
+This project is open-source and released under the [MIT License](LICENSE).
