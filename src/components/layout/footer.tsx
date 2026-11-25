@@ -6,8 +6,7 @@ import { SITE } from "@/lib/constants";
 
 const LINKS = [
   { label: "Documentation", href: "/rsml", internal: true },
-  { label: "editor.richspeech.org", href: SITE.editorUrl },
-  { label: "docs.richspeech.org", href: SITE.docsUrl },
+  { label: "Rich Speech Editor", href: SITE.editorUrl },
 ];
 
 export function Footer() {
