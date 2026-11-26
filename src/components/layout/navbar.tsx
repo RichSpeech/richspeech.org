@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { GithubIcon } from "@/components/ui/icons";
-import { NAV_ITEMS, SITE, type NavItem, type NavLink } from "@/lib/constants";
+import { DOCS_LINKS, NAV_ITEMS, SITE, type NavItem, type NavLink } from "@/lib/constants";
 
 const LINK = "rounded-md px-1 py-1 text-[15px] font-medium text-slate-800 hover:text-blue-700";
 
@@ -97,7 +97,7 @@ export function Navbar() {
             <GithubIcon width={28} height={28} />
           </a>
           <Link
-            href="/rsml"
+            href={DOCS_LINKS.rsml}
             className="hidden rounded-lg bg-blue-700 px-5 py-2.5 text-[15px] font-medium text-white hover:bg-blue-800 sm:inline-block"
           >
             Get Started
@@ -140,7 +140,7 @@ export function Navbar() {
             ))}
             <li className="pt-2">
               <Link
-                href="/rsml"
+                href={DOCS_LINKS.rsml}
                 onClick={close}
                 className="block rounded-lg bg-blue-700 px-5 py-3 text-center font-medium text-white sm:hidden"
               >

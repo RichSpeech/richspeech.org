@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { DOCS_LINKS } from "@/lib/constants";
 
 interface Props {
   title: string;
@@ -13,7 +14,7 @@ export function PageShell({ title, summary, children }: Props) {
       <p className="mt-5 text-lg leading-relaxed text-slate-700">{summary}</p>
       {children}
       <div className="mt-10 flex flex-wrap gap-4">
-        <Button href="/rsml">
+        <Button href={DOCS_LINKS.rsml}>
           Read the documentation
         </Button>
         <Button href="/" variant="outline">

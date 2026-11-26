@@ -1,6 +1,6 @@
 # richspeech.org
 
-The official website and documentation hub for the [Rich Speech](https://richspeech.org) open-source initiative.
+The official website for the [Rich Speech](https://richspeech.org) open-source initiative.
 
 Rich Speech defines modern transcription schemas, representations, and evaluation standards for speech AI — capturing disfluencies, paralinguistics, prosody, code-mixing, and dialects without sacrificing clean normalized text readability.
 
@@ -8,11 +8,9 @@ Rich Speech defines modern transcription schemas, representations, and evaluatio
 
 ## What's in this repository
 
-This is a Next.js (App Router) + Tailwind CSS web application serving the landing site, specification references, and developer documentation:
+This is a Next.js (App Router) + Tailwind CSS web application serving the landing site. The RSML specification and npm documentation live in a separate app at [docs.richspeech.org](https://docs.richspeech.org):
 
 - **`/`**: Overview of the Rich Speech initiative, ecosystem components, and online editor link.
-- **`/rsml`**: Specification and annotation guidelines for **Rich Speech Markup Language (RSML)** — covering isolated tokens, span tags, bracket-form dual-readings (`[verbatim](normalized)`), and precedence rules.
-- **`/rsml-npm`**: Developer documentation for the published [`rsml`](https://www.npmjs.com/package/rsml) npm package (`RSMLAnnotator`), including React + TypeScript usage, constructor options, and dynamic vocabulary registration.
 - **`/prespeech-py`** & **`/rsml-py`**: Python speech preprocessing and dataset utilities (currently under active development, marked as Coming Soon).
 
 ---
@@ -60,8 +58,6 @@ richspeech-org/
 │   ├── app/
 │   │   ├── layout.tsx         # Root layout with navbar and footer
 │   │   ├── page.tsx           # Home page
-│   │   ├── rsml/page.tsx      # RSML Specification & Annotation Guide
-│   │   ├── rsml-npm/page.tsx  # rsml npm developer guide & React examples
 │   │   ├── prespeech-py/      # PreSpeech (Py) page (Coming Soon)
 │   │   └── rsml-py/           # RSML Python page (Coming Soon)
 │   ├── components/

@@ -1,3 +1,4 @@
+import { DOCS_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Waveform } from "@/components/home/waveform";
 
@@ -22,10 +23,10 @@ export function Hero() {
             Speech Processing. Towards speech processing that replaces flat-text transcription with <b>Rich Transcription</b>.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <Button href="/rsml" arrow>
+            <Button href={DOCS_LINKS.rsml} arrow>
               Get Started
             </Button>
-            <Button href="/rsml" variant="outline">
+            <Button href={DOCS_LINKS.rsml} variant="outline">
               Read the spec
             </Button>
           </div>

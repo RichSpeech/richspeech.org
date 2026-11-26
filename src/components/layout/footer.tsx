@@ -2,10 +2,10 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { GithubIcon } from "@/components/ui/icons";
-import { SITE } from "@/lib/constants";
+import { DOCS_LINKS, SITE } from "@/lib/constants";
 
 const LINKS = [
-  { label: "Documentation", href: "/rsml", internal: true },
+  { label: "Documentation", href: DOCS_LINKS.rsml, internal: true },
   { label: "Rich Speech Editor", href: SITE.editorUrl },
 ];
 
@@ -16,6 +16,12 @@ export function Footer() {
         <div className="flex flex-col gap-2">
           <Logo />
           <p className="text-sm text-slate-500">© 2026 Rich Speech. Open source.</p>
+          <p className="text-sm text-slate-500">
+            Contact:{" "}
+            <a href={`mailto:${SITE.contactEmail}`} className="break-all text-blue-700 hover:underline">
+              {SITE.contactEmail}
+            </a>
+          </p>
         </div>
         <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[15px] text-slate-700">
           {LINKS.map((l) => (

@@ -4,8 +4,15 @@ export const SITE = {
   docsUrl: "https://docs.richspeech.org",
   editorUrl: "https://editor.richspeech.org",
   githubUrl: "https://github.com/richspeech",
+  contactEmail: "radheshyam.s@research.iiit.ac.in",
   description:
     "Rich Speech is an open-source initiative for Rich Speech Processing, which is an emerging direction of speech processing with rich transcription, representations, and evaluation across all down-stream applications like ASR, TTS, Speech Translation, Speech LLMs, etc.",
+} as const;
+
+/** Documentation lives in its own app on the docs subdomain. */
+export const DOCS_LINKS = {
+  rsml: `${SITE.docsUrl}/`,
+  npm: `${SITE.docsUrl}/npm/`,
 } as const;
 
 export type IconName = "file-text" | "code" | "package" | "layers";
@@ -22,13 +29,13 @@ export const ECOSYSTEM: readonly EcosystemItem[] = [
   {
     title: "RSML",
     description: "Rich Speech Markup Language (RSML) is a rich transcription schema and file format for speech.",
-    href: "/rsml",
+    href: DOCS_LINKS.rsml,
     icon: "file-text",
   },
   {
     title: "RSML npm",
     description: "A JavaScript library with a widget for editing RSML in web apps.",
-    href: "/rsml-npm",
+    href: DOCS_LINKS.npm,
     icon: "code",
   },
   {
@@ -60,16 +67,16 @@ export interface NavItem extends NavLink {
 
 export const NAV_ITEMS: readonly NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "RSML", href: "/rsml", children: [{ label: "RSML", href: "/rsml" }] },
+  { label: "RSML", href: DOCS_LINKS.rsml, children: [{ label: "RSML", href: DOCS_LINKS.rsml }] },
   {
     label: "Libraries",
     href: "#",
     children: [
-      { label: "RSML npm", href: "/rsml-npm" },
+      { label: "RSML npm", href: DOCS_LINKS.npm },
       { label: "PreSpeech Python", href: "/prespeech-py" },
       { label: "RSML Python", href: "/rsml-py" },
     ],
   },
   { label: "Editor", href: SITE.editorUrl, external: true, hideExternalIcon: true },
-  { label: "Documentation", href: "/rsml" },
+  { label: "Documentation", href: DOCS_LINKS.rsml },
 ];
